@@ -10,8 +10,8 @@ import (
 
 func main() {
 	http.HandleFunc("/hello", handleHello) // HL
-	fmt.Println("serving on http://localhost:7777/hello")
-	log.Fatal(http.ListenAndServe("localhost:7777", nil))
+	fmt.Println("serving on http://localhost:8080/hello")
+	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
 
 func handleHello(w http.ResponseWriter, req *http.Request) {

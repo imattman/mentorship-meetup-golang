@@ -18,19 +18,19 @@ Xejucrwn`
 func main() {
 	// the character type is known as a 'rune' in Go
 	// runes are UTF-8 code points (1-4 bytes)
-	clear := []rune(message) // convert string to slice of runes
-	encoded := []rune{}      // empty slice of encoded runes
+	encoded := []rune(message) // convert string to slice of runes
+	clear := []rune{}          // start with empty slice of decoded runes
 
-	for _, c := range clear {
+	for _, c := range encoded { // range iterates over index and value; drop index
 		if unicode.IsLetter(c) {
 			c = shiftN(c, 17) // shift 17
 		}
-		// build up the encoded slice one rune at a time
-		encoded = append(encoded, c)
+		// build up the decoded slice one rune at a time
+		clear = append(clear, c)
 	}
 
-	// encoded runes converted back to string for output
-	fmt.Println(string(encoded))
+	// decoded runes converted back to string for output
+	fmt.Println(string(clear))
 }
 
 // END MAIN OMIT

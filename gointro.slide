@@ -19,7 +19,7 @@ Spark your interest and encourage you to dive deeper.
 
 - Quickly highlight motivation, history, and language features
 - Walk through some examples, illustrate syntax as we go
-- Hands-on time 
+- Limited time -- can't cover everything
 
 
 * Why Go?
@@ -81,7 +81,7 @@ Combination of both high-level and low-level features
 
 .play -edit gointro/hello_server.go
 
-.link http://localhost:7777/hello
+.link http://localhost:8080/hello
 
 
 * Static Typing with  Inference
@@ -100,7 +100,7 @@ fibonacci.go
 
 fizzbuzz.go 
 
-.play  -edit gointro/fizzbuzz.go /START FIZZBUZZ OMIT/,/END FIZZBUZZ OMIT/
+.code  -edit gointro/fizzbuzz.go /START FIZZBUZZ OMIT/,/END FIZZBUZZ OMIT/
 
 
 * In-line Error Handling
@@ -108,6 +108,11 @@ fizzbuzz.go
 fizzbuzz.go (cont.)
 
 .play  -edit gointro/fizzbuzz.go /START MAIN OMIT/,/END MAIN OMIT/
+
+
+* Alternative: Ignore error with '_' placeholder (bad practice)
+
+.play  -edit gointro/fizzbuzz_ignore.go /START MAIN OMIT/,/END MAIN OMIT/
 
 
 * Opinionated Toward Safety and Efficiency
@@ -153,12 +158,17 @@ Variables initialized with a default "zero value"
 
 * Structs and Methods
 
-* Interfaces
+.play  -edit gointro/methods.go
 
-- Contract for behavior
-- Implicitly satisfied (i.e. “duck typing”)
-- Provide mechanism of substitutability based on behavior rather than type inheritance
-- No inheritance
+* Additional Topics For Later
+
+- Interfaces (duck typing!)
+- Pointers
+- Higher order functions
+- Deferred function calls
+- Channels and Goroutines
+
+.image gointro/img/busy.jpg
 
 
 * Other Nice Tidbits
@@ -167,24 +177,28 @@ Variables initialized with a default "zero value"
 - Rich standard library
 - Unit testing comes with std lib
 - Code style standard, built in with `go fmt` -- no more pointless arguments
-- Small stylistic things that can improved editability, e.g trailing ‘,’ within slice literals
+- Small stylistic behaviors that can improve editability, e.g trailing ‘,’ within slice literals
 
 
 * Parting Thoughts
 
-There isn't any one silver bullet aspect of Go that makes it super appealing.
+There isn't any *one* aspect of Go that makes it super attractive.
 
-Consensus from the community is that the appeal of Go derives from the collective whole; it's a lot of little things that add up.
+Consensus from the community is that the appeal of Go derives from a lot of little things that add up to fun and productive collective whole.
 
-If you try it, give it a chance.
+If you try it, be tenacious and give it a little time.
 It took me a little while to warm up to the language, but now I'm a fan.
+
+.image gointro/img/gopherblue.png 300 _
+
 
 * Resources
 
 .link https://golang.org/  Language website
 .link https://play.golang.org  Online Playground
-.link https://golang.org/pkg/  Std lib documentation
-.link https://godoc.org/  Open Source libs documentation
-.link https://gobyexample.com/  Lots of Go Examples
+.link https://golang.org/pkg/  Std lib package documentation
+.link https://gobyexample.com/  Loads of Go Examples
+.link https://godoc.org/  Open Source package documentation
 .link https://golang.org/doc/effective_go.html Effective Go
-.link https://medium.com/go-walkthrough Awesome intro to Go std lib
+.link https://medium.com/go-walkthrough Fantastic intro to Go std lib (blog)
+

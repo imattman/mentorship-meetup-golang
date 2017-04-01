@@ -9,12 +9,9 @@ import (
 // START MAIN OMIT
 func main() {
 	for i := 1; i < 25; i++ {
-		result, err := fizzbuzz(i)
-
-		if err != nil {
-			fmt.Printf("Error: %s\n", err)
-			break
-		}
+		// can ignore the error using '_' place holder
+		// variable assignment needs to match number of values returned
+		result, _ := fizzbuzz(i)
 
 		fmt.Printf("%2d: %s\n", i, result)
 	}
