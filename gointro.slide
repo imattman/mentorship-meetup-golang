@@ -1,0 +1,109 @@
+A Casual Introduction to Go
+
+Matt Phillips
+Go enthusiast
+
+@i_mattman
+mattman in Slack
+
+
+* Goal of this talk
+
+Guide you through a brief introduction Go.
+
+Spark your interest and encourage you to dive deeper.
+
+.image gointro/gopher.jpg 500 _
+
+* Today
+
+- Quickly highlight motivation, history, and language features
+- Walk through some examples, illustrate syntax as we go
+- Hands on time 
+
+
+* Why Go?
+
+Go is a modern, general purpose programming language by Google.
+
+Built to fill a need of performance, productivity, and maintainability.
+
+Emphasis on:
+
+- Simplicity
+- Readability
+- Efficiency (programmer and execution)
+
+
+* History
+
+Design began in 2007
+
+- Robert Griesemer, Rob Pike, and Ken Thompson
+
+Open Source in late 2009
+
+Language stable as of Go 1, early 2012
+
+Backward compatibility promise: code written for 1.0 will compile with 1.x tools.
+
+
+* Language features
+
+- Statically typed with safety built in
+- Wicked fast compile times, often faster than scripting languages
+- Support for higher order functions and closures
+- Object-oriented features: methods, polymorphism
+- Concurrency is a first-class concern, core to the language
+- Statically linked binaries -- no extra runtime to install!
+
+Combination of both high-level and low-level features
+
+Affectionally called a "Get S#!t Done" language.
+
+
+
+* Talk is cheap, show some code!
+
+* hello.go
+
+.play -numbers gointro/hello.go
+
+* You've seen Hello World a thousand times...
+
+* hello_server.go
+
+.play -numbers gointro/hello_server.go
+
+.link http://localhost:7777/hello
+
+
+
+
+
+
+* Safety
+
+Variables initialized with zero value by default
+
+- false for bool
+- 0 for integers, 0.0 for float
+-  " " for strings
+
+No memory management due to garbage collection
+
+You can’t (easily) access uninitialized areas of memory through pointer arithmetic
+
+
+* Interfaces
+
+- Contract for behavior
+- Implicitly satisfied (i.e. “duck typing”)
+- Provide mechanism of substitutability based on behavior rather than type inheritance 
+
+Opinionated
+Unused imports & unused variables are compile-time errors
+Formatting (even a tool with `go fmt`)
+Small stylistic things that can improved editability, e.g trailing ‘,’ within slice literals
+
+No inheritance -- reusability is handled through composition
