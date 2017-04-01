@@ -13,13 +13,13 @@ Guide you through a brief introduction Go.
 
 Spark your interest and encourage you to dive deeper.
 
-.image gointro/gopher.jpg 500 _
+.image gointro/img/gopher.jpg 500 _
 
 * Today
 
 - Quickly highlight motivation, history, and language features
 - Walk through some examples, illustrate syntax as we go
-- Hands on time 
+- Hands-on time 
 
 
 * Why Go?
@@ -33,6 +33,8 @@ Emphasis on:
 - Simplicity
 - Readability
 - Efficiency (programmer and execution)
+
+.image gointro/img/5years.png 300 _
 
 
 * History
@@ -50,7 +52,8 @@ Backward compatibility promise: code written for 1.0 will compile with 1.x tools
 
 * Language features
 
-- Statically typed with safety built in
+- Statically typed with safety built in 
+- Garbage collected, no memory management
 - Wicked fast compile times, often faster than scripting languages
 - Support for higher order functions and closures
 - Object-oriented features: methods, polymorphism
@@ -59,51 +62,129 @@ Backward compatibility promise: code written for 1.0 will compile with 1.x tools
 
 Combination of both high-level and low-level features
 
-Affectionally called a "Get S#!t Done" language.
 
+.image gointro/img/gopherswrench.jpg 200 _
 
 
 * Talk is cheap, show some code!
 
+
 * hello.go
 
-.play -numbers gointro/hello.go
+.play -edit gointro/hello.go
 
-* You've seen Hello World a thousand times...
+
+* Hello World?  We can do better...
+
 
 * hello_server.go
 
-.play -numbers gointro/hello_server.go
+.play -edit gointro/hello_server.go
 
 .link http://localhost:7777/hello
 
 
+* Static Typing with  Inference
+
+.play  -edit gointro/declarations.go
 
 
+* Multiple Assignment
+
+fibonacci.go
+
+.play  -edit gointro/fibonacci.go
 
 
-* Safety
+* Multiple Returns from Functions
 
-Variables initialized with zero value by default
+fizzbuzz.go 
+
+.play  -edit gointro/fizzbuzz.go /START FIZZBUZZ OMIT/,/END FIZZBUZZ OMIT/
+
+
+* In-line Error Handling
+
+fizzbuzz.go (cont.)
+
+.play  -edit gointro/fizzbuzz.go /START MAIN OMIT/,/END MAIN OMIT/
+
+
+* Opinionated Toward Safety and Efficiency
+
+Unused variables not allowed
+
+.play  -edit gointro/unused_variable.go /START OMIT/,/END OMIT/
+
+
+Same for unused imports
+
+.play  -edit gointro/unused_import.go /START OMIT/,/END OMIT/
+
+
+* Types
+
+Standard types you might expect from C
+
+    int, float, bool, rune (char), pointers, arrays, structs
+
+As well as others expected in a modern language
+
+    strings, functions
+
+Higher level constucts
+
+    slices, maps, interfaces, channels
+
+Variables initialized with a default "zero value"
 
 - false for bool
 - 0 for integers, 0.0 for float
--  " " for strings
+-  "" (empty) for strings
 
-No memory management due to garbage collection
 
-You can’t (easily) access uninitialized areas of memory through pointer arithmetic
+* caesar.go
 
+.play  -edit gointro/caesar.go /START MAIN OMIT/,/END MAIN OMIT/
+
+* caesar.go (cont.)
+
+.play  -edit gointro/caesar.go /START SHIFT OMIT/,/END SHIFT OMIT/
+
+* Structs and Methods
 
 * Interfaces
 
 - Contract for behavior
 - Implicitly satisfied (i.e. “duck typing”)
-- Provide mechanism of substitutability based on behavior rather than type inheritance 
+- Provide mechanism of substitutability based on behavior rather than type inheritance
+- No inheritance
 
-Opinionated
-Unused imports & unused variables are compile-time errors
-Formatting (even a tool with `go fmt`)
-Small stylistic things that can improved editability, e.g trailing ‘,’ within slice literals
 
-No inheritance -- reusability is handled through composition
+* Other Nice Tidbits
+
+- Tooling: `go fmt`, `go get`, `go test`, etc.
+- Rich standard library
+- Unit testing comes with std lib
+- Code style standard, built in with `go fmt` -- no more pointless arguments
+- Small stylistic things that can improved editability, e.g trailing ‘,’ within slice literals
+
+
+* Parting Thoughts
+
+There isn't any one silver bullet aspect of Go that makes it super appealing.
+
+Consensus from the community is that the appeal of Go derives from the collective whole; it's a lot of little things that add up.
+
+If you try it, give it a chance.
+It took me a little while to warm up to the language, but now I'm a fan.
+
+* Resources
+
+.link https://golang.org/  Language website
+.link https://play.golang.org  Online Playground
+.link https://golang.org/pkg/  Std lib documentation
+.link https://godoc.org/  Open Source libs documentation
+.link https://gobyexample.com/  Lots of Go Examples
+.link https://golang.org/doc/effective_go.html Effective Go
+.link https://medium.com/go-walkthrough Awesome intro to Go std lib
